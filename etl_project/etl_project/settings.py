@@ -75,12 +75,27 @@ WSGI_APPLICATION = 'etl_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": {
+        "ENGINE": "mssql",
+        "NAME": "ETL_DataBase",
+        "USER": "sa",
+        "PASSWORD": "sonata@123",
+        "HOST": "HODT153",
+        "PORT": "1433",
+        "OPTIONS": {
+            "driver": "ODBC Driver 17 for SQL Server",
+        },
+    },
 }
+
 
 
 # Password validation
